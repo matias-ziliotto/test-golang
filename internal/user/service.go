@@ -2,8 +2,15 @@ package user
 
 import (
 	"context"
+	"errors"
 
 	"github.com/matias-ziliotto/test-golang/internal/domain"
+)
+
+// Errors
+var (
+	ErrNotFound          = errors.New("user not found")
+	ErrBuyerAlreadyExist = errors.New("user already exist")
 )
 
 type Service interface {
