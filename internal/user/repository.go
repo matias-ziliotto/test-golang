@@ -72,7 +72,7 @@ func (r *repository) Exists(ctx context.Context, documentNumber string) bool {
 }
 
 func (r *repository) Save(ctx context.Context, u domain.User) (int, error) {
-	query := "INSERT INTO users(first_name,last_name, document_type_id, document_number) VALUES (?,?,?)"
+	query := "INSERT INTO users(first_name, last_name, document_type_id, document_number) VALUES (?,?,?,?)"
 	stmt, err := r.db.Prepare(query)
 	if err != nil {
 		return 0, err

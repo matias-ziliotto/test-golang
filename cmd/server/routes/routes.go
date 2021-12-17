@@ -45,4 +45,6 @@ func (r *router) buildSellerRoutes() {
 	handler := handler.NewUser(service)
 
 	r.rg.GET("/users", handler.GetAll)
+	r.rg.GET("/users/:id", handler.Get)
+	r.rg.POST("/users", handler.Store)
 }
